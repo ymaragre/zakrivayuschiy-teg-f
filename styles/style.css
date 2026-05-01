@@ -26,7 +26,7 @@
 
 .section {
   inline-size: var(--section-size);
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .block-decorated {
@@ -41,6 +41,19 @@
   align-items: center;
   gap: 20px;
   line-height: 1;
+  padding-block: clamp(122px, 119.1824px + 0.7512vw, 130px);
+  margin-block: 100px;
+  font-family: var(--accent-font);
+}
+
+.title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-transform: uppercase;
 }
 
 .button-save {
