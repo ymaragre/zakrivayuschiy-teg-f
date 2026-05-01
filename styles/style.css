@@ -12,9 +12,7 @@
 
 .page {
   min-inline-size: 320px;
-  max-inline-size: 700px;
   min-block-size: 100dvb;
-  margin: auto;
   font-family: var(--main-font), Arial, sans-serif;
   font-size: 1.125rem;
   font-weight: var(--normal-font-weight);
@@ -23,4 +21,30 @@
                     linear-gradient(#e7e7e7 0.01%, #1a1a1a);
   background-attachment: fixed;
   background-size: cover;
+  color: var(--text-color);
+}
+
+.section {
+  inline-size: var(--section-size);
+  margin: 0 auto;
+}
+
+.block-decorated {
+  background-color: var(--background-color);
+  border: 1px solid currentColor;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  line-height: 1;
+}
+
+.button-save {
+  display: block;
+  inline-size: var(--section-button-size);
+  margin: 0 auto;
 }

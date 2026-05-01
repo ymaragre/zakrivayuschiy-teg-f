@@ -14,8 +14,70 @@
     <link rel="stylesheet" href="./styles/animations.css" />
   </head>
   <body class="page">
-    <header class="header"></header>
-    <main></main>
+    <header class="header section block-decorated">
+      <h1 class="title">&lt;/HTML&gt;</h1>
+      <p class="subtitle">закрывающий тег</p>
+    </header>
+    <main>
+      <ul class="list">
+        <li class="list-item section">
+          <article class="card block-decorated">
+            <h2 class="card__title">Фритрек и нулевой спринт: Подготовка к работе</h2>
+            <div class="card__image-container">
+              <span class="card__label">&lt;/HTML&gt;</span>
+              <img src="./images/post-image.jpg" alt="" class="card__image">
+            </div>
+            <div class="card__text">
+              <p>
+                Это было самое начало пути. На этом этапе важно было проникнуться основами и настроиться на учёбу.
+                И, возможно, подумать, как новые знания могут повлиять на ваше будущее.
+              </p>
+              <p>
+                Место для ваших воспоминаний о начале обучения.
+              </p>
+            </div>
+            <div class="card__buttons">
+              <button class="card__icon-button">
+                <svg class="like-icon">
+                  <use href="./svg/heart.svg#heart" />
+                </svg>
+              </button>
+              <button class="button card__like-button block-decorated">
+                <span class="button__text">Like</span>
+              </button>
+            </div>
+          </article>
+        </li>
+      </ul>
+      <button
+        type="button"
+        onclick="window['save'].showModal();"
+        aria-controls="save"
+        class="button button-save block-decorated"
+      >
+        <span class="button__text">
+          <svg class="button__image save-image">
+            <use href="./svg/floppy.svg#floppy" />
+          </svg>
+          Сохранить на память
+        </span>
+      </button>
+      <dialog id="save" class="save block-decorated">
+        <div class="save__text">
+          <svg class="save-image">
+            <use href="./svg/floppy.svg#floppy" />
+          </svg>
+          <p>Вставьте дискету, чтобы продолжить</p>
+        </div>
+        <button
+          type="button" 
+          onclick="window['save'].close()"
+          class="button block-decorated"
+        >
+          <span class="button__text">ок</span>
+        </button>
+      </dialog>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>

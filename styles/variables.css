@@ -4,4 +4,9 @@
   --accent-font: 'Press Start 2P';
   --normal-font-weight: 410;
   --bold-font-weight: 715;
+  --text-color: #000;
+  --background-color: #fff;
+
+  --section-size: clamp(375px, 260.5632px + 30.5164vw, 700px);
+  --section-button-size: clamp(306px, 295.7888px + 2.723vw, 335px);
 }
