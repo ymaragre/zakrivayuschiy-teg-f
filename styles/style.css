@@ -14,7 +14,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), Arial, sans-serif;
-  font-size: 1.125rem;
+  font-size: var(--main-font-size);
   font-weight: var(--normal-font-weight);
   background-image: repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
                     repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
@@ -31,7 +31,7 @@
 
 .block-decorated {
   background-color: var(--background-color);
-  border: 2px solid currentColor;
+  border: var(--border-size) solid currentColor;
 }
 
 .header {
@@ -41,28 +41,30 @@
   align-items: center;
   gap: 20px;
   line-height: 1;
-  padding-block: clamp(122px, 119.1824px + 0.7512vw, 130px);
+  padding-block: var(--padding-block-size);
   margin-block: 100px;
   font-family: var(--accent-font);
+  text-transform: uppercase;
 }
 
 .title {
-  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-  text-transform: uppercase;
+  font-size: var(--title-size);
 }
 
 .subtitle {
-  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  text-transform: uppercase;
+  font-size: var(--subtitle-size);
+}
+
+.list-item:not(:last-child) {
+  margin-block-end: 50px;
 }
 
 .card__title {
   font-size: inherit;
   font-weight: var(--bold-font-weight);
-  line-height: 1;
   padding-inline: 10px;
-  padding-block: 6px;
-  border-block-end: 2px solid currentColor;
+  padding-block: 5px;
+  border-block-end: var(--border-size) solid currentColor;
 }
 
 .card__image-container {
@@ -74,7 +76,7 @@
   top: 25px;
   right: 25px;
   font-family: var(--accent-font);
-  font-size: 0.875rem;
+  font-size: var(--accent-font-size);
   text-shadow:
     -1px 0 var(--background-color), 
     0 1px var(--background-color), 
@@ -105,7 +107,7 @@
   flex-direction: column;
   gap: 25px;
   padding: 25px;
-  border-block-start: 2px solid currentColor;
+  border-block-start: var(--border-size) solid currentColor;
 }
 
 .card__buttons {
@@ -131,18 +133,19 @@
 
 .button {
   font-family: var(--accent-font);
-  font-size: 0.875rem;
+  font-size: var(--accent-font-size);
   line-height: 0.9;
+  background-color: var(--background-color);
+  border: var(--border-size) solid var(--text-color);
 }
 
 .card__like-button {
-  padding-inline: 2.1875rem;
-  padding-block: 0.65625rem;
+  padding-inline: 35px;
+  padding-block: 10.5px;
 }
 
 .button-save {
   display: block;
-  inline-size: var(--section-button-size);
   margin: 50px auto 100px;
   padding-inline: 18px;
   padding-block: 15px;
@@ -150,22 +153,30 @@
 
 .button-save .button__text {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
 }
 
 .button__image {
   width: 21px;
-  height: 21px;
+  aspect-ratio: 1 / 1;
 }
 
+/* ширина в rem, чтобы расширялось при необходимости, так как окно маленькое */
+
 .dialog[open] {
-  inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+  inline-size: 22.0625rem;
   padding: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  row-gap: 30px;
+  column-gap: 20px;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: var(--accent-font);
+  font-size: var(--accent-font-size);
+  line-height: 1.5;
 }
 
 .dialog::backdrop {
@@ -174,17 +185,6 @@
 
 .page:has(.dialog[open]) {
   overflow: hidden;
-}
-
-.dialog__content {
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  align-items: center;
-  gap: 20px;
-  text-transform: uppercase;
-  font-family: var(--accent-font);
-  font-size: 0.875rem;
-  line-height: 1.5;
 }
 
 .dialog__image {
@@ -196,4 +196,32 @@
   grid-column: span 2;
   padding-block: 10.5px;
   text-transform: uppercase;
+}
+
+@media (width <= 600px) {
+  .button-save .button__text {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button__image {
+    width: 28px;
+  }
+
+  .dialog[open] {
+    inline-size: 341px;
+    padding-inline: 40px;
+  }
+}
+
+/* чтобы не ломало разметку до минимальных 320рх */
+
+@media (width < 375px) {
+  .section {
+    width: 100%;
+  }
+
+  .header {
+    --title-size: clamp(2.8125rem, 1.358rem + 7.2727vw, 3.0625rem);
+  }
 }

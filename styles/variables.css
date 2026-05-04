@@ -2,11 +2,19 @@
 :root {
   --main-font: 'Inter';
   --accent-font: 'Press Start 2P';
+  --main-font-size: 1.125rem;
+  --accent-font-size: 0.875rem;
   --normal-font-weight: 410;
   --bold-font-weight: 715;
   --text-color: #000;
   --background-color: #fff;
+  --border-size: 2px;
 
   --section-size: clamp(375px, 260.5632px + 30.5164vw, 700px);
-  --section-button-size: clamp(306px, 295.7888px + 2.723vw, 335px);
+}
+
+.header {
+  --title-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --subtitle-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --padding-block-size: clamp(120px, 117.1824px + 0.7512vw, 128px);
 }
