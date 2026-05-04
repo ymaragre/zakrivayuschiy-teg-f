@@ -8,10 +8,13 @@
   --bold-font-weight: 715;
   --text-color: #000;
   --background-color: #fff;
-  --border-size: 2px;
   --accent-color: #000;
+  --border-size: 2px;
 
   --section-size: clamp(375px, 260.5632px + 30.5164vw, 700px);
+
+  --fill-color: #000;
+  --animation-fill-color: #f00;
 }
 
 .header {
