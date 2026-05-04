@@ -9,6 +9,7 @@
   --text-color: #000;
   --background-color: #fff;
   --border-size: 2px;
+  --accent-color: #000;
 
   --section-size: clamp(375px, 260.5632px + 30.5164vw, 700px);
 }

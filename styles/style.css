@@ -132,15 +132,41 @@
 }
 
 .button {
+  position: relative;
   font-family: var(--accent-font);
   font-size: var(--accent-font-size);
   line-height: 0.9;
-  background-color: var(--background-color);
-  border: var(--border-size) solid var(--text-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  background-color: var(--text-color);
+  transition: transform 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+  color: var(--background-color);
+  mix-blend-mode: difference;
 }
 
 .card__like-button {
-  padding-inline: 35px;
+  inline-size: 8.125rem;
   padding-block: 10.5px;
 }
 
@@ -161,6 +187,7 @@
 .button__image {
   width: 21px;
   aspect-ratio: 1 / 1;
+  fill: var(--background-color);
 }
 
 /* ширина в rem, чтобы расширялось при необходимости, так как окно маленькое */
@@ -190,6 +217,7 @@
 .dialog__image {
   height: 39px;
   width: 39px;
+  fill: currentColor;
 }
 
 .dialog__button {
