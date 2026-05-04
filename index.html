@@ -56,15 +56,15 @@
         class="button button-save block-decorated"
       >
         <span class="button__text">
-          <svg class="button__image save-image">
+          <svg class="button__image save-image" viewBox="0 0 39 39">
             <use href="./svg/floppy.svg#floppy" />
           </svg>
-          Сохранить на память
+          <span>Сохранить на память</span>
         </span>
       </button>
-      <dialog id="save" class="save block-decorated">
-        <div class="save__text">
-          <svg class="save-image">
+      <dialog id="save" class="dialog block-decorated">
+        <div class="dialog__content">
+          <svg class="dialog__image" viewBox="0 0 39 39">
             <use href="./svg/floppy.svg#floppy" />
           </svg>
           <p>Вставьте дискету, чтобы продолжить</p>
@@ -72,7 +72,7 @@
         <button
           type="button" 
           onclick="window['save'].close()"
-          class="button block-decorated"
+          class="button dialog__button block-decorated"
         >
           <span class="button__text">ок</span>
         </button>

@@ -136,11 +136,64 @@
 }
 
 .card__like-button {
-  padding: 0.65625rem 2.1875rem;
+  padding-inline: 2.1875rem;
+  padding-block: 0.65625rem;
 }
 
 .button-save {
   display: block;
   inline-size: var(--section-button-size);
-  margin: 0 auto;
+  margin: 50px auto 100px;
+  padding-inline: 18px;
+  padding-block: 15px;
+}
+
+.button-save .button__text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+}
+
+.button__image {
+  width: 21px;
+  height: 21px;
+}
+
+.dialog[open] {
+  inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.page:has(.dialog[open]) {
+  overflow: hidden;
+}
+
+.dialog__content {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  gap: 20px;
+  text-transform: uppercase;
+  font-family: var(--accent-font);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.dialog__image {
+  height: 39px;
+  width: 39px;
+}
+
+.dialog__button {
+  grid-column: span 2;
+  padding-block: 10.5px;
+  text-transform: uppercase;
 }
