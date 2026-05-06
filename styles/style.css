@@ -13,7 +13,7 @@
 .page {
   color: var(--text-color);
   font-family: var(--main-font), Arial, sans-serif;
-  font-weight: var(--normal-font-weight);
+  font-variation-settings: 'wdth' var(--normal-font-weight);
   font-size: var(--main-font-size);
   background-image: repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
                     repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
@@ -68,7 +68,7 @@
   border-block-end: var(--border-size) solid currentColor;
   padding-inline: 10px;
   padding-block: 5px;
-  font-weight: var(--bold-font-weight);
+  font-variation-settings: 'wdth' var(--bold-font-weight);
   font-size: inherit;
 }
 
