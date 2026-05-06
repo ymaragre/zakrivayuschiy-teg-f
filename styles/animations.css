@@ -17,3 +17,13 @@
     opacity: 1;
   }
 }
+
+@keyframes rotate-hue {
+  from {
+    filter: hue-rotate(0);
+  }
+
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
