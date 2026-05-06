@@ -13,13 +13,13 @@
 .page {
   color: var(--text-color);
   font-family: var(--main-font), Arial, sans-serif;
-  font-variation-settings: 'wght' var(--normal-font-weight);
   font-size: var(--main-font-size);
   background-image: repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
                     repeating-linear-gradient(to right, #d3d3d3 0 2px, transparent 2px 4px),
                     linear-gradient(#e7e7e7 0.01%, #1a1a1a);
   background-size: cover;
   background-attachment: fixed;
+  font-variation-settings: 'wght' var(--normal-font-weight);
   min-inline-size: 320px;
   min-block-size: 100dvb;
 }
@@ -42,7 +42,7 @@
   gap: 20px;
   margin-block: 100px;
   padding-block: var(--padding-block-size);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -68,8 +68,8 @@
   border-block-end: var(--border-size) solid currentColor;
   padding-inline: 10px;
   padding-block: 5px;
-  font-variation-settings: 'wght' var(--bold-font-weight);
   font-size: inherit;
+  font-variation-settings: 'wght' var(--bold-font-weight);
 }
 
 .card__image-container {
@@ -82,7 +82,7 @@
   right: 25px;
   z-index: 1;
   opacity: 0.5;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-size: var(--accent-font-size);
   text-transform: uppercase;
   text-shadow:
@@ -133,7 +133,7 @@
   filter: brightness(1.5) contrast(1.5);
 }
 
-.filter-beautiful {
+.filter-hue-animation {
   animation: rotate-hue 8s infinite;
 }
 
@@ -159,6 +159,7 @@
   border: var(--border-size) solid transparent;
   padding: 0;
   background-color: transparent;
+  transition: border-color 0.3s ease;
   aspect-ratio: 1 / 1;
 }
 
@@ -172,6 +173,7 @@
 
 .like-icon {
   width: 100%;
+  scale: 1.16;
 }
 
 .contour {
@@ -196,7 +198,7 @@
 
 .like-icon:hover .core {
   fill: var(--fill-color);
-  transition-delay: 0.03s;
+  transition-delay: 0;
 }
 
 .like-icon:hover .main-body {
@@ -206,12 +208,10 @@
 
 .like-icon:active .core {
   fill: var(--animation-fill-color);
-  transition-delay: 0;
 }
 
 .like-icon:active .main-body {
   fill: var(--animation-fill-color);
-  transition-delay: 0.05s;
 }
 
 .like-icon.is-liked .core {
@@ -241,7 +241,7 @@
 
 .button {
   position: relative;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-size: var(--accent-font-size);
   line-height: 0.9;
   transition: box-shadow 0.3s ease;
@@ -307,7 +307,7 @@
   row-gap: 30px;
   column-gap: 20px;
   padding: 28px;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-size: var(--accent-font-size);
   line-height: 1.5;
   text-transform: uppercase;
